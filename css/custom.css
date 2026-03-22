@@ -146,7 +146,7 @@
 @media screen and (max-width: 768px) {
     /* 让首页顶部和全局背景都强制换成竖版图 */
     #page-header, #web_bg {
-        background-image: url('/img/mobile_bg.jpg') !important;
+        background-image: url('/img/mobile_bg.jpeg') !important;
         background-position: center center !important;
     }
 }
