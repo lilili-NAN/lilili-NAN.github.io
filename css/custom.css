@@ -1,0 +1,142 @@
+:root {
+  /* 定义卡片背景颜色（透明度可调） */
+  --card-bg-alpha: 0.75;
+  --card-bg: rgba(255, 255, 255, var(--card-bg-alpha));
+}
+
+[data-theme="dark"] {
+  --card-bg: rgba(25, 25, 25, 0.6);
+}
+
+/* 1. 卡片背景透明化（首页文章、侧边栏、说说等） */
+#recent-posts .recent-post-item,
+#aside-content .card-widget,
+.layout .pagination > *:not(.space),
+#article-container .shuoshuo-item {
+  background: var(--card-bg) !important;
+  border-radius: 15px !important;
+}
+
+/* 2. 顶部横幅透明化（去背景图、去蓝色、去遮罩） */
+#page-header {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+#page-header::before {
+  background: transparent !important;
+}
+
+/* 3. 导航栏布局调整（使其更紧凑） */
+#nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+#nav #blog-info {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+#nav #menus {
+    flex: 1;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start; /* 菜单左对齐 */
+}
+
+#nav .menus_items {
+    display: inline-flex !important;
+}
+
+#nav #search-button {
+    margin-left: auto;
+}
+
+#nav #toggle-menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #nav .menus_items {
+        display: none !important;
+    }
+    #nav #toggle-menu {
+        display: block !important;
+    }
+}
+/* --- Category Cards Style --- */
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 180px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    display: block !important;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.category-card-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s;
+}
+
+.category-card:hover .category-card-bg {
+    transform: scale(1.1);
+}
+
+.category-card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.category-card-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.category-card-count {
+    font-size: 1em;
+    opacity: 0.9;
+}
+
+/* Add a dark overlay to make text readable */
+.category-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    transition: background 0.3s;
+}
+
+.category-card:hover::after {
+    background: rgba(0,0,0,0.1);
+}
+
