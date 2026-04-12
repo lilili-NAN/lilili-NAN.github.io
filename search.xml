@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>2026蓝桥杯A均衡数</title>
+      <link href="/2026/04/11/2026%E8%93%9D%E6%A1%A5%E6%9D%AFA%E5%9D%87%E8%A1%A1%E6%95%B0/"/>
+      <url>/2026/04/11/2026%E8%93%9D%E6%A1%A5%E6%9D%AFA%E5%9D%87%E8%A1%A1%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="A-均衡数"><a href="#A-均衡数" class="headerlink" title="A. 均衡数"></a>A. 均衡数</h2><p>题目链接：<a href="https://www.luogu.com.cn/problem/P16224">P16224 [蓝桥杯 2026 省 A] 均衡数</a></p><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如果一个正整数的二进制表示中（无前导 0）， 1  的数量和  0  的数量相同，则我们称其为一个“均衡数”。</p><p>现在，请你找到一个均衡数  x ，使得  |2026202620262026 - x|  的值最小。若存在多个均衡数使得差值相同且最小，则取其中最小的一个。</p><hr><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>我们要找一个与目标值相减绝对值最小的数。<br>显然我们需要找到一个比它<strong>大的最小均衡数</strong>，和一个比它<strong>小的最大均衡数</strong>，然后比较这两个数与目标值的差值。</p><h4 id="如何寻找？"><a href="#如何寻找？" class="headerlink" title="如何寻找？"></a>如何寻找？</h4><p>首先要看目标数的二进制位数。将 $2026202620262026$ 放入计算器，得到其二进制为：<br><code>0111001100101101001000001111011011000111011010001010</code><br>忽略前导0总共有 51 位（26 个 1，25 个 0）。</p><p><strong>注意：</strong> 因为是奇数位，所以同位数下<strong>绝对不可能</strong>存在 0 和 1 数量相等的均衡数！</p><blockquote><p><del>某同学因为直接用了带前导零的程序员计算器，把最前面的 0 算进去了，误以为这刚好是 52 位均衡数，痛失 5 分（雾）</del></p></blockquote><p>既然 51 位没有均衡数，我们只能跨位数寻找：</p><p><strong>1. 找比它大的最小均衡数（52 位）</strong><br>因为不能有前导零，最高位必为 1。为了让值最小，中间要尽可能填 0，最后填 1。<br>所以 52 位（26 个 0，26 个 1）的最小均衡数为：<br><code>1000000000000000000000000001111111111111111111111111</code><br>转换为十进制为 A = 2251799847239679$</p><p><strong>2. 找比它小的最大均衡数（50 位）</strong><br>同理，最高位必为 1。为了让值最大，前面要尽可能填 1，最后填 0。<br>所以 50 位（25 个 1，25 个 0）的最大均衡数为：<br><code>11111111111111111111111110000000000000000000000000</code><br>转换为十进制为 B = 1125899873288192$</p><h4 id="差值比对"><a href="#差值比对" class="headerlink" title="差值比对"></a>差值比对</h4><script type="math/tex; mode=display">|2026202620262026 - A| = 225597226977653</script><script type="math/tex; mode=display">|2026202620262026 - B| = 900302746973834</script><p>显然，与 A 的差值更小。</p><h3 id="最终答案"><a href="#最终答案" class="headerlink" title="最终答案"></a>最终答案</h3><p><code>2251799847239679</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法竞赛 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> 蓝桥杯 </tag>
+            
+            <tag> 二进制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我的第一篇学习笔记</title>
       <link href="/2026/03/22/My-First-Post/"/>
       <url>/2026/03/22/My-First-Post/</url>
